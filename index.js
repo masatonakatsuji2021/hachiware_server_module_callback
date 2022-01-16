@@ -1,3 +1,13 @@
+/**
+ * ============================================================================================
+ * Hachiware_Server_module_callback
+ * 
+ * Module for callback when request is received of Web server package "hachiware_server".
+ * 
+ * Author : Nakatsuji Masato 
+ * ============================================================================================
+ */
+
 const fs = require("fs");
 const tool = require("hachiware_tool");
 
