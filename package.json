@@ -1,0 +1,24 @@
+{
+  "name": "hachiware_server_module_callback",
+  "version": "1.0.0",
+  "description": "Module for callback when request is received of Web server package \"hachiware_server\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masatonakatsuji2021/hachiware_server_module_callback.git"
+  },
+  "keywords": [
+    "hachiware",
+    "hachiware_server",
+    "callback"
+  ],
+  "author": "Nakatsuji Masato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masatonakatsuji2021/hachiware_server_module_callback/issues"
+  },
+  "homepage": "https://github.com/masatonakatsuji2021/hachiware_server_module_callback#readme"
+}
