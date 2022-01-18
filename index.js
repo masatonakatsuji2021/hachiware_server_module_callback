@@ -1,10 +1,14 @@
 /**
  * ============================================================================================
- * Hachiware_Server_module_callback
+ * Hachiware_Server_module_basic_auth
  * 
  * Module for callback when request is received of Web server package "hachiware_server".
  * 
- * Author : Nakatsuji Masato 
+ * License : MIT License. 
+ * Since   : 2022.01.15
+ * Author  : Nakatsuji Masato 
+ * GitHub  : https://github.com/masatonakatsuji2021/Hachiware_Server_module_basic_auth
+ * npm     : https://www.npmjs.com/package/Hachiware_Server_module_basic_auth 
  * ============================================================================================
  */
 
