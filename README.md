@@ -1,9 +1,16 @@
 # hachiware_server_module_callback
 
+<a href="https://github.com/masatonakatsuji2021/hachiware_server_module_callback/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/masatonakatsuji2021/hachiware_server_module_callback"></a>
+<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/masatonakatsuji2021/hachiware_server_module_callback">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/masatonakatsuji2021/hachiware_server_module_callback">
+<img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/masatonakatsuji2021/hachiware_server_module_callback">
+<img src="https://img.shields.io/badge/author-Nakatsuji%20Masato-brightgreen" alt="author Nakatsuji Masato">
+<img src="https://img.shields.io/badge/made%20in-Japan-brightgreen" alt="made in japan">
+
 A server module for implementing a callback for a request receiving word.
 
 It is a dedicated server module of the web server application "hachiware_server".  
-To use it, you must first install and configure `` hachiware_server``.
+To use it, you must first install and configure ``hachiware_server``.
 
 You can install hachiware_server with the following command.
 
@@ -104,21 +111,34 @@ Since error information is included in exception, it can be output when the erro
 The life cycle of this server module is as follows:
 
 ```code
+(server listen start)
+    |
+load fook start 
+    |
 (request)
     |
 load fook access
     |
-access callback action
+access callback action                      <= Execute access callback.
             |
             |   * If an error occurs
             |
-    load fook error
+    load fook error                         <= Execute error callback.
             |
     error callback action
+    ...
+    |
+    | * Quit the server
+    |
+load fook end
+    |
+(server listen exit)
 ```
 
+* "Load hook start" executes the start hook of each server module.  
 * "load fook access" executes the access hook of each sserver module.  
 * "load fook error" executes the error hook of the server module.
+* "Load hook end" executes the end hook of each server module.  
 
 ---
 
