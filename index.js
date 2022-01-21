@@ -27,7 +27,7 @@ module.exports = function(conf, context){
 
 		try{
 	
-            context.loadFookModule("access",[
+            context.loadFookModule(conf, "access",[
                 req, 
                 res,
             ]);
@@ -45,7 +45,7 @@ module.exports = function(conf, context){
                 res.statusCode = 500;
             }
         
-            context.loadFookModule("error",[
+            context.loadFookModule(conf, "error",[
                 error, 
                 req, 
                 res,
