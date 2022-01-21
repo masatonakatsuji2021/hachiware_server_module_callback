@@ -142,7 +142,12 @@ load fook end
 
 ---
 
-License : MIT License  
-Author : Nakatsuji Masato.  
-Github : [https://github.com/masatonakatsuji2021/hachiware_server_module_callback](https://github.com/masatonakatsuji2021/hachiware_server_module_callback)  
-npm : [https://www.npmjs.com/package/hachiware_server_module_callback](https://www.npmjs.com/package/hachiware_server_module_callback)
+hachiware_server_module_callback
+
+A server module for implementing a callback for a request receiving word.
+ 
+License : MIT License.   
+Author  : Nakatsuji Masato  
+HP URL  : [https://hachiware-js.com/](https://hachiware-js.com/)  
+GitHub  : [https://github.com/masatonakatsuji2021/hachiware_server_module_callback](https://github.com/masatonakatsuji2021/hachiware_server_module_callback)  
+npm     : [https://www.npmjs.com/package/hachiware_server_module_callback](https://www.npmjs.com/package/hachiware_server_module_callback)
