@@ -19,6 +19,23 @@ const tool = require("hachiware_tool");
 
 module.exports = function(conf, context){
 
+    this.fookTimeout = function(req, res){
+
+        if(tool.objExists(conf,"callbacks.timeout")){
+            conf.callbacks.timeout(req, res);
+            return;
+        }
+
+        if(tool.objExists(conf,"callbacks.error")){
+
+            var error = new Error("timeout");
+            conf.callbacks.error(error, req, res);
+            return;
+        }
+
+        res.end();
+    };
+
     /**
      * fookRequest
      * @param {*} resolve 
@@ -56,20 +73,10 @@ module.exports = function(conf, context){
             if(tool.objExists(conf,"callbacks.error")){
         
                 conf.callbacks.error(error, req, res);
-                
-                if(conf.errorConsoleOutput){
-                    console.log(tool.getDateFormat("[{DATETIME}] ") + error);
-                }
-
             }
             else{
                 res.end();
             }
-        
-            if(conf.errorConsoleOutput){
-                console.log(tool.getDateFormat("[{DATETIME}] ") + error);
-            }
-
 		}
 
     };
