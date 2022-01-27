@@ -19,23 +19,6 @@ const tool = require("hachiware_tool");
 
 module.exports = function(conf, context){
 
-    this.fookTimeout = function(req, res){
-
-        if(tool.objExists(conf,"callbacks.timeout")){
-            conf.callbacks.timeout(req, res);
-            return;
-        }
-
-        if(tool.objExists(conf,"callbacks.error")){
-
-            var error = new Error("timeout");
-            conf.callbacks.error(error, req, res);
-            return;
-        }
-
-        res.end();
-    };
-
     /**
      * fookRequest
      * @param {*} resolve 
