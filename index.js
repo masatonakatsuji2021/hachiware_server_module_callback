@@ -20,6 +20,44 @@ const tool = require("hachiware_tool");
 module.exports = function(conf, context){
 
     /**
+     * module
+     * @param {*} moduleName 
+     * @returns 
+     */
+    this.module = function(moduleName){
+
+        var mList = context.modules[conf._file];
+
+        if(!(
+            mList[moduleName] ||
+            mList["hachiware_server_module_" + moduleName]
+        )){
+            return;
+        }
+
+        var getModule;
+
+        if(mList[moduleName]){
+            getModule = mList[moduleName];
+        }
+
+
+        if(mList["hachiware_server_module_" + moduleName]){
+            getModule = mList["hachiware_server_module_" + moduleName];
+        }
+
+        return getModule;
+    };
+
+    /**
+     * getConf
+     * @returns 
+     */
+    this.getConf = function(){
+        return conf;
+    }
+
+    /**
      * fookRequest
      * @param {*} resolve 
      * @param {*} req 
@@ -35,7 +73,7 @@ module.exports = function(conf, context){
             ]);
 
 			if(tool.objExists(conf,"callbacks.access")){
-				conf.callbacks.access(req, res);
+				conf.callbacks.access.bind(this)(req, res);
 				return;
 			}
 
@@ -54,8 +92,7 @@ module.exports = function(conf, context){
             ]);
         
             if(tool.objExists(conf,"callbacks.error")){
-        
-                conf.callbacks.error(error, req, res);
+                conf.callbacks.error.bind(this)(error, req, res);
             }
             else{
                 res.end();
